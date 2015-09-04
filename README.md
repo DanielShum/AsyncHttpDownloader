@@ -26,7 +26,7 @@ AsyncHttpDownloader is an android open source project which is used to download 
 }
 ```
 
-**Implements codes**
+**Implement codes**
 * Setting file saving storage
 ```java
 	// If you want to set default storage to save the destination files, you should either do it so
