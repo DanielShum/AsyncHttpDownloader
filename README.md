@@ -16,7 +16,7 @@ AsyncHttpDownloader is an android open source project which is used to download 
 	include ':app'
 	include '..:AsyncHttpDownloader:asyncHttpDownloaderLibrary' //add this line
 ```
-* Add gradle compile code to your app leve build.gradle file:
+* Add gradle compile code to your app level build.gradle file:
 ```gradle
 	dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
@@ -27,22 +27,22 @@ AsyncHttpDownloader is an android open source project which is used to download 
 ```
 
 **Implement codes**
-* Setting file saving storage
+* Setting a directory to save the downloads
 ```java
-	// If you want to set default storage to save the destination files, you should either do it so
-    // once the application is started, or you can do it when you first time implement the downloader.
+	// If you want to set default directory to save the downloads, you should either do it so once the
+    // application is started, or when you first time implement the downloader.
     // If you set this, the directory will be created under your SD card root directory (if not exists).
-    // If you do not set this, all downloaded files will be saved under /sdcard/temp/ directory if you 
-    // either not give a destination file url.
+    // If you do not set this eithor not give a destination file url, all downloads will be saved under 
+    // sdcard/temp/ directory.
     AsyncHttpDownloader.getInstance().setDefaultDirectoryUnderSdCard("ExampleAsyncDownload/downloads");
 ```
 
 * Adding a download mission to the pool
 ```java
-	// If you don't give a destination file path, the downloaded file will be saved to the default storage
+	// If you don't give a destination file path, the download will be saved to the default directory
 	AsyncHttpDownloader.getInstance().addDownloadTask(this, downloadUrl2);
 	
-	// you can also specify a destination file path where you want the downloaded file to be
+	// Or you may wanna specify a destination file path where you want the downloaded file to be
     AsyncHttpDownloader.getInstance().addDownloadTask(this, downloadUrl3, destinationFileUrl);
 ```
 
