@@ -93,6 +93,7 @@ public class ExampleDownloadDetailActivity extends Activity implements AsyncHttp
         if (!this.downloadUrl.equals(downloadUrl)) return;
 
         textView2.setText("Time download started: \n" + downloadTask.getTimeDownloadStarted());
+        textView3.setText("Total bytes: \n" + downloadTask.getTotalByte());
         textView4.setText("Completed bytes: \n" + completed);
 
         if (total > 0 && completed > 0){

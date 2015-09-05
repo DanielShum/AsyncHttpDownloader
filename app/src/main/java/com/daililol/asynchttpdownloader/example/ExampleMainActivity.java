@@ -28,10 +28,9 @@ public class ExampleMainActivity extends Activity implements
     private Button button3;
 
     private AsyncHttpDownloaderListener downloaderListener;
-    private final String downloadUrl1 = "http://dlsw.baidu.com/sw-search-sp/soft/bb/14391/WPS_V9.1.0.5184_setup.1440658742.exe?downloadUrl1";
-    private final String downloadUrl2 = "http://dlsw.baidu.com/sw-search-sp/soft/bb/14391/WPS_V9.1.0.5184_setup.1440658742.exe?downloadUrl2";
-    private final String downloadUrl3 = "http://dlsw.baidu.com/sw-search-sp/soft/bb/14391/WPS_V9.1.0.5184_setup.1440658742.exe?downloadUrl3";
-    private String[] taskList = new String[]{downloadUrl1, downloadUrl2, downloadUrl3};
+    private final String downloadUrl1 = "http://download.virtualbox.org/virtualbox/4.2.32/VirtualBox-4.2.32-101581-OSX.dmg?downloadUrl1";
+    private final String downloadUrl2 = "http://download.virtualbox.org/virtualbox/4.2.32/VirtualBox-4.2.32-101581-OSX.dmg?downloadUrl2";
+    private final String downloadUrl3 = "http://download.virtualbox.org/virtualbox/4.2.32/VirtualBox-4.2.32-101581-OSX.dmg?downloadUrl3";
 
 
     @Override
@@ -56,7 +55,7 @@ public class ExampleMainActivity extends Activity implements
 
         AsyncHttpDownloader.getInstance().addDownloadTask(this, downloadUrl1);
         AsyncHttpDownloader.getInstance().addDownloadTask(this, downloadUrl2);
-        AsyncHttpDownloader.getInstance().addDownloadTask(this, downloadUrl3, null);
+        AsyncHttpDownloader.getInstance().addDownloadTask(this, downloadUrl3);
     }
 
     @Override
@@ -101,7 +100,17 @@ public class ExampleMainActivity extends Activity implements
 
     @Override
     public void onSuccess(String downloadUrl, File file) {
-
+        switch (downloadUrl){
+            case downloadUrl1:
+                button1.setText("Done");
+                break;
+            case downloadUrl2:
+                button2.setText("Done");
+                break;
+            case downloadUrl3:
+                button3.setText("Done");
+                break;
+        }
     }
 
     @Override
@@ -112,7 +121,7 @@ public class ExampleMainActivity extends Activity implements
         // If you don't cancel, it will run in the background until all tasks are
         // done (or failed due to unstable internet connection), when you open the
         // activity again, you can still see the running task.
-        //AsyncHttpDownloader.getInstance().cancelAllRunningTasks();
+        AsyncHttpDownloader.getInstance().cancelAllRunningTasks();
 
         super.onDestroy();
     }

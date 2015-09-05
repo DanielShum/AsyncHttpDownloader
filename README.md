@@ -6,8 +6,8 @@ AsyncHttpDownloader is an android open source project which is used to download 
 
 **Features**
 * Multiple download tasks.
-* Manager download tasks.
-* Listener to download events across Activities.
+* Manage download tasks.
+* Listen to download events across Activities.
 
 **Adding the library to your project**
 * Download this project and unzip to your root Android Studio workplace.

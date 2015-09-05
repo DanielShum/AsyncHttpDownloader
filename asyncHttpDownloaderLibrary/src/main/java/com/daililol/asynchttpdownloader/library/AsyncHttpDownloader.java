@@ -11,7 +11,7 @@ import java.util.Set;
 /**
  * Created by DennyShum on 9/2/15.
  */
-public class AsyncHttpDownloader {
+public class AsyncHttpDownloader extends Object{
 
     private int maxTask = 50;
     private static AsyncHttpDownloader instance;

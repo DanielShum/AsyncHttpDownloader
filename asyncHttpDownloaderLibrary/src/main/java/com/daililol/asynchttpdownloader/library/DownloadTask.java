@@ -137,10 +137,10 @@ public class DownloadTask extends AsyncTask<String, Integer, String>{
 
     public void cancelTask(){
         isCanceled = true;
+        if (!isCancelled() ) super.cancel(true);
         try{
             if (inputStream != null) inputStream.close();
             if (outputStream != null) outputStream.close();
-            super.cancel(true);
         }catch (Exception e){}
 
         if (callback != null) callback.onCancelTask(downloadUrl);
