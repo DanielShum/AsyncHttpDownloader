@@ -21,7 +21,7 @@ AsyncHttpDownloader is an android open source project which is used to download 
 	dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
 	compile 'com.android.support:appcompat-v7:23.0.0'  //add support v7 library
-    compile project(':..:MaterialAppBase:materialAppBaseLibrary')   //add this library
+    compile project(':..:AsyncHttpDownloader:asyncHttpDownloaderLibrary')   //add this library
     //and your other dependencies.
 }
 ```
@@ -89,5 +89,4 @@ AsyncHttpDownloader is an android open source project which is used to download 
     	super.onDestroy();
     }
 ```
-
 
